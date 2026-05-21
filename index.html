@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ほけん家族｜保険と家計の相談窓口（千葉県茂原市）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Klee+One:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+     HEADER
+     ============================================================ -->
+  <header class="site-header" id="site-header">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M3 11L12 3L21 11V21H15V15H9V21H3V11Z" stroke="white" stroke-width="2.4" stroke-linejoin="round"
+            stroke-linecap="round" />
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text">ほけん家族</div>
+        <div class="logo-sub">株式会社アクトワン</div>
+      </div>
+    </a>
+    <nav class="site-nav">
+      <a href="#trust">選ばれる理由</a>
+      <a href="#ba">Before&nbsp;/&nbsp;After</a>
+      <a href="#voice">お客様の声</a>
+      <a href="#access">アクセス</a>
+      <a href="#line-cta" class="c-btn c-btn--pink c-btn--sm nav-cta">
+        <i class="fa-brands fa-line"></i>
+        <span>無料3分チェック</span>
+      </a>
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+     01. HERO (FV) — 横長動画の上にコピー・BA・CTAを重ねる構成
+     ============================================================ -->
+  <section class="p-hero" id="hero">
+    <div class="p-hero__stage">
+      <div class="p-hero__media">
+        <video id="hero-video" autoplay muted loop playsinline>
+          <source src="./fv_move2.mp4" type="video/mp4">
+        </video>
+        <div class="p-hero__media-scrim" aria-hidden="true"></div>
+        <div class="p-hero__video-shine" aria-hidden="true"></div>
+      </div>
+
+      <div class="p-hero__overlay">
+        <div class="p-hero__main">
+          <div class="p-hero__copy">
+            <h1 class="p-hero__h1">
+              <span class="p-hero__h1-line">その<span class="p-hero__h1-em p-hero__h1-em--navy p-hero__h1-em--hoken">保険</span></span>
+              <span class="p-hero__h1-line"><span class="p-hero__h1-em p-hero__h1-em--pink p-hero__h1-em--pro">プロ</span>が本気で</span>
+              <span class="p-hero__h1-line"><span class="p-hero__h1-em p-hero__h1-em--pink p-hero__h1-em--yasuku">安く</span>します。</span>
+            </h1>
+
+            <p class="p-hero__lead">
+              家族みんなで安心して行ける、地域密着の相談窓口です<br>
+              相談無料。無理な勧誘なし。
+            </p>
+
+            <div class="p-hero__cta-wrap">
+              <a href="#line-cta" class="p-hero__cta p-hero__cta--primary">
+                <i class="fa-brands fa-line p-hero__cta-line" aria-hidden="true"></i>
+                <span class="p-hero__cta-stack">
+                  <span class="p-hero__cta-top">うちの保険いくら安くなる？</span>
+                  <span class="p-hero__cta-main">LINEで無料3分チェック</span>
+                </span>
+              </a>
+              <a href="#access" class="p-hero__cta p-hero__cta--secondary">
+                <i class="fa-brands fa-line p-hero__cta-line" aria-hidden="true"></i>
+                <span class="p-hero__cta-stack">
+                  <span class="p-hero__cta-top">お店に行って相談したい！</span>
+                  <span class="p-hero__cta-main">来店予約はこちら</span>
+                </span>
+              </a>
+            </div>
+
+            <div class="p-hero__features">
+              <div class="p-hero__feature">
+                <div class="p-hero__feature-icon" aria-hidden="true">
+                  <img src="./images/icon/feature-heart.png" alt="" class="p-hero__feature-img" />
+                </div>
+                <div class="p-hero__feature-body">
+                  <p class="p-hero__feature-title">相談無料</p>
+                  <p class="p-hero__feature-desc">何度でも無料で<br>ご相談いただけます</p>
+                </div>
+              </div>
+              <div class="p-hero__feature">
+                <div class="p-hero__feature-icon" aria-hidden="true">
+                  <img src="./images/icon/feature-pin.png" alt="" class="p-hero__feature-img" />
+                </div>
+                <div class="p-hero__feature-body">
+                  <p class="p-hero__feature-title">地域密着</p>
+                  <p class="p-hero__feature-desc">茂原で愛されて75年の<br>安心感</p>
+                </div>
+              </div>
+              <div class="p-hero__feature">
+                <div class="p-hero__feature-icon" aria-hidden="true">
+                  <img src="./images/icon/feature-calendar.png" alt="" class="p-hero__feature-img" />
+                </div>
+                <div class="p-hero__feature-body">
+                  <p class="p-hero__feature-title">創業75年</p>
+                  <p class="p-hero__feature-desc">1950年創業の信頼と<br>豊富な相談実績</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="p-hero__panel">
+            <div class="p-hero__ba-card" id="hero-ba">
+              <p class="p-hero__panel-lead">
+                <span class="p-hero__panel-lead-line">
+                  <span class="p-hero__panel-lead-dash" aria-hidden="true">—</span>
+                  <span class="p-hero__panel-lead-emphasis">
+                    <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>同</span></span>
+                    <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>じ</span></span>
+                    <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>保</span></span>
+                    <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>障</span></span>
+                    <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>額</span></span>
+                  </span>で、ここまで下がる！
+                  <span class="p-hero__panel-lead-dash" aria-hidden="true">—</span>
+                </span>
+              </p>
+              <div class="p-hero__ba-row">
+                <div class="p-hero__ba-col p-hero__ba-col--before reveal-target">
+                  <span class="p-hero__ba-tag p-hero__ba-tag--before">Before</span>
+                  <div class="p-hero__ba-icon">
+                    <img src="./images/img_osatu_gray.svg" alt="" class="p-hero__ba-img" />
+                  </div>
+                  <p class="p-hero__ba-caption">毎月の保険料</p>
+                  <p class="p-hero__ba-price">22,876<span class="p-hero__ba-unit">円/月</span></p>
+                </div>
+
+                <div class="p-hero__ba-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 28 24" width="28" height="24">
+                    <path d="M2 12h22M16 4l8 8-8 8" stroke-linecap="round"
+                      stroke-linejoin="round" fill="none" />
+                  </svg>
+                </div>
+
+                <div class="p-hero__ba-col p-hero__ba-col--after reveal-target">
+                  <span class="p-hero__ba-tag p-hero__ba-tag--after">After</span>
+                  <div class="p-hero__ba-icon">
+                    <img src="./images/img_osatu_pink.svg" alt="" class="p-hero__ba-img" />
+                  </div>
+                  <p class="p-hero__ba-caption">毎月の保険料</p>
+                  <p class="p-hero__ba-price p-hero__ba-price--accent">
+                    <span class="count-num" data-target="10394" data-format="comma" data-trigger="hero-ba">0</span><span
+                      class="p-hero__ba-unit">円/月</span>
+                  </p>
+                </div>
+              </div>
+
+              <a href="#ba" class="p-hero__ba-detail">
+                <span>Before&thinsp;/&thinsp;Afterの詳細はこちら</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     02. ASSET COMPARISON  ── あなたの資産、プロが本気で増やします
+     ============================================================ -->
+  <section class="p-asset" id="asset">
+    <div class="l-container">
+      <div class="p-asset__head">
+        <h2 class="big-title">
+          <span class="big-title__line">あなたの資産</span>
+          <span class="big-title__line">プロが本気で</span>
+          <span class="big-title__line big-title__line--accent">増やします。</span>
+        </h2>
+        <div class="dot-sub">
+          <span class="dot-sub__dots">・・・・・</span>
+          <strong>
+            <span class="p-hero__panel-lead-line">
+              <span class="p-hero__panel-lead-emphasis">
+                <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>同</span></span>
+                <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>じ</span></span>
+                <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>保</span></span>
+                <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>険</span></span>
+                <span class="p-hero__panel-lead-char"><span class="p-hero__panel-lead-dot" aria-hidden="true"></span><span>料</span></span>
+              </span>で、ここまで貯まる！
+            </span>
+          </strong>
+          <span class="dot-sub__dots">・・・・・</span>
+        </div>
+      </div>
+
+      <div class="p-asset__ba" id="asset-ba">
+        <div class="p-asset__ba-row">
+          <!-- Before -->
+          <div class="ba-card ba-card--before ba-card--tall reveal-target">
+            <div class="ba-card__label">Before</div>
+            <div class="ba-card__icon ba-card__icon--lg">
+              <div class="coin-stack-wrap coin-stack-wrap--gray" aria-hidden="true">
+                <img src="./images/icon/svg_coin_gray.svg" alt="" class="coin-stack" />
+                <img src="./images/icon/svg_coin_gray.svg" alt="" class="coin-stack" />
+                <img src="./images/icon/svg_coin_gray.svg" alt="" class="coin-stack" />
+              </div>
+            </div>
+            <div class="ba-card__amount">
+              <span class="ba-card__num">160</span>
+              <span class="ba-card__unit">万円</span>
+            </div>
+          </div>
+
+          <div class="p-asset__ba-arrow" aria-hidden="true">
+            <svg viewBox="0 0 28 24" width="32" height="28">
+              <path d="M2 12h22M16 4l8 8-8 8" stroke="#cfc7b9" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+            </svg>
+          </div>
+
+          <!-- After -->
+          <div class="ba-card ba-card--after ba-card--tall reveal-target">
+            <div class="ba-card__label">After</div>
+            <div class="ba-card__icon ba-card__icon--lg">
+              <div class="coin-stack-wrap coin-stack-wrap--pink" aria-hidden="true">
+                <img src="./images/icon/svg_coin_pink.svg" alt="" class="coin-stack" />
+                <img src="./images/icon/svg_coin_pink.svg" alt="" class="coin-stack" />
+                <img src="./images/icon/svg_coin_pink.svg" alt="" class="coin-stack" />
+                <img src="./images/icon/svg_coin_pink.svg" alt="" class="coin-stack" />
+                <img src="./images/icon/svg_coin_pink.svg" alt="" class="coin-stack" />
+                <img src="./images/icon/svg_coin_pink.svg" alt="" class="coin-stack" />
+                <img src="./images/icon/svg_coin_pink.svg" alt="" class="coin-stack" />
+                <img src="./images/icon/svg_coin_pink.svg" alt="" class="coin-stack" />
+              </div>
+            </div>
+            <div class="ba-card__amount">
+              <span class="ba-card__num count-num" data-target="2200" data-format="comma"
+                data-trigger="asset-ba">0</span>
+              <span class="ba-card__unit">万円</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="#ba" class="p-hero__ba-detail">
+          <span>Before&thinsp;/&thinsp;Afterの詳細はこちら</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Animated 30-year growth chart -->
+      <div class="p-asset__chart fade-up" id="asset-chart">
+        <div class="p-asset__chart-title">
+          同じ月22,876円を <strong>30年</strong> 積み立てると…
+        </div>
+        <div class="p-asset__chart-grid">
+          <div class="p-asset__chart-bars" id="chart-bars">
+            <div class="p-asset__chart-col">
+              <div class="p-asset__chart-pair">
+                <div class="p-asset__chart-bar p-asset__chart-bar--before" data-h="6"></div>
+                <div class="p-asset__chart-bar p-asset__chart-bar--after" data-h="9"></div>
+              </div>
+              <div class="p-asset__chart-xlabel">0年</div>
+            </div>
+            <div class="p-asset__chart-col">
+              <div class="p-asset__chart-pair">
+                <div class="p-asset__chart-bar p-asset__chart-bar--before" data-h="14"></div>
+                <div class="p-asset__chart-bar p-asset__chart-bar--after" data-h="22"></div>
+              </div>
+              <div class="p-asset__chart-xlabel">5年</div>
+            </div>
+            <div class="p-asset__chart-col">
+              <div class="p-asset__chart-pair">
+                <div class="p-asset__chart-bar p-asset__chart-bar--before" data-h="22"></div>
+                <div class="p-asset__chart-bar p-asset__chart-bar--after" data-h="38"></div>
+              </div>
+              <div class="p-asset__chart-xlabel">10年</div>
+            </div>
+            <div class="p-asset__chart-col">
+              <div class="p-asset__chart-pair">
+                <div class="p-asset__chart-bar p-asset__chart-bar--before" data-h="34"></div>
+                <div class="p-asset__chart-bar p-asset__chart-bar--after" data-h="56"></div>
+              </div>
+              <div class="p-asset__chart-xlabel">15年</div>
+            </div>
+            <div class="p-asset__chart-col">
+              <div class="p-asset__chart-pair">
+                <div class="p-asset__chart-bar p-asset__chart-bar--before" data-h="46"></div>
+                <div class="p-asset__chart-bar p-asset__chart-bar--after" data-h="74"></div>
+              </div>
+              <div class="p-asset__chart-xlabel">20年</div>
+            </div>
+            <div class="p-asset__chart-col">
+              <div class="p-asset__chart-pair">
+                <div class="p-asset__chart-bar p-asset__chart-bar--before" data-h="58"></div>
+                <div class="p-asset__chart-bar p-asset__chart-bar--after" data-h="92"></div>
+              </div>
+              <div class="p-asset__chart-xlabel">25年</div>
+            </div>
+            <div class="p-asset__chart-col">
+              <div class="p-asset__chart-pair">
+                <div class="p-asset__chart-bar p-asset__chart-bar--before" data-h="68"></div>
+                <div class="p-asset__chart-bar p-asset__chart-bar--after" data-h="100"></div>
+              </div>
+              <div class="p-asset__chart-xlabel">30年</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-asset__chart-legend">
+          <span class="leg-before">BEFORE（従来の保険のみ）</span>
+          <span class="leg-after">AFTER（見直し後・年6%運用）</span>
+        </div>
+        <div class="p-asset__chart-note">※モデルケースのシミュレーション。運用利率や条件により結果は変動します。</div>
+      </div>
+    </div>
+  </section>
+  <section class="p-inline-cta">
+    <div class="l-container">
+      <div class="p-inline-cta__btns">
+        <a href="#line-cta" class="c-btn c-btn--pink c-btn--xl">
+          <i class="fa-brands fa-line c-btn__line"></i>
+          <span class="c-btn__stack">
+            <span class="c-btn__top">うちの保険、いくら安くなる？貯まる？</span>
+            <span class="c-btn__main">来店前に無料でチェック&nbsp;→</span>
+          </span>
+        </a>
+        <a href="#access" class="c-btn c-btn--outline-pink c-btn--xl">
+          <i class="fa-brands fa-line c-btn__line"></i>
+          <span class="c-btn__stack">
+            <span class="c-btn__top">お店に行って相談したい！</span>
+            <span class="c-btn__main">来店予約はこちら&nbsp;→</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     04. TRUST  ── 生命保険の無駄をなくして、お客様の資産を増やす
+     ============================================================ -->
+  <section class="p-trust" id="trust">
+    <div class="l-container">
+      <div class="p-trust__head fade-up">
+        <div class="p-trust__sub-q">
+          <span class="p-trust__sub-bar"></span>
+          どうして、そんなに安くなるの？<br>
+          どうして、そんなに資産が増えるの？
+        </div>
+        <h2 class="big-title">
+          <span class="big-title__line">生命保険の無駄をなくして</span>
+          <span class="big-title__line">お客様の資産を増やす！</span>
+        </h2>
+        <p class="big-title__lead">保険見直しのプロだから。</p>
+      </div>
+
+      <div class="p-trust__laurels" id="trust-laurels">
+        <div class="laurel reveal-target">
+          <img class="laurel__svg" src="./images/icon/svg_gekkeikan.svg" alt="" aria-hidden="true">
+          <div class="laurel__content">
+            <div class="laurel__top">茂原で創業</div>
+            <div class="laurel__num"><span class="count-num" data-target="75" data-trigger="trust-laurels">0</span><span
+                class="laurel__unit">年</span></div>
+          </div>
+        </div>
+
+        <div class="laurel reveal-target">
+          <img class="laurel__svg" src="./images/icon/svg_gekkeikan.svg" alt="" aria-hidden="true">
+          <div class="laurel__content">
+            <div class="laurel__top">顧客数</div>
+            <div class="laurel__num"><span class="count-num" data-target="10000" data-format="comma"
+                data-trigger="trust-laurels">0</span></div>
+            <div class="laurel__bottom">件以上</div>
+          </div>
+        </div>
+
+        <div class="laurel reveal-target">
+          <img class="laurel__svg" src="./images/icon/svg_gekkeikan.svg" alt="" aria-hidden="true">
+          <div class="laurel__content">
+            <div class="laurel__top">受賞</div>
+            <div class="laurel__num laurel__num--text">No.<span class="num-text">1</span></div>
+            <div class="laurel__bottom">千葉県・全国</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     05. STORY  ── 目の前のお客様が、自分の家族だったら
+     ============================================================ -->
+  <section class="p-story" id="story">
+    <div class="l-container">
+      <div class="p-story__chip fade-up">「目の前のお客様が、自分の家族だったら」</div>
+
+      <div class="p-story__inner">
+        <div class="p-story__body fade-up d1">
+          <p>初めまして。<strong>ほけん家族</strong>と申します。</p>
+          <p>今から<strong>75年前</strong>、現社長の祖母が30代で夫を亡くし、幼い子どもを3人抱えて、生きていくために始めたのが保険業でした。</p>
+          <p>その後、<strong>2002年に千葉県初</strong>となる来店型保険相談窓口「アフラックサービスショップ」を茂原駅近くにオープン。（現在は北塚に移転）</p>
+          <p>創業以来、<strong>1万人以上のお客様</strong>の保険を安く、資産を増やすお手伝いをして参りました。</p>
+          <p class="p-story__creed">
+            「保険屋が儲かる商品」を売るのではなく、<br>
+            <span class="hl">「自分の家族に伝えたい、無駄のない保険の入り方」</span>を伝える。<br>
+            創業以来変わらぬ、わたしたちの信念です。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     06. AWARDS  ── 数々の受賞歴が証明する実力
+     ============================================================ -->
+  <section class="p-awards" id="awards">
+    <div class="l-container">
+      <div class="p-awards__card fade-up">
+        <div class="p-awards__photo">
+          <img src="./images/awards.jpg" alt="受賞トロフィー" loading="lazy">
+        </div>
+        <div class="p-awards__text">
+          <div class="p-awards__kicker">AWARDS</div>
+          <h3 class="p-awards__title">数々の受賞歴が<br>証明する実力。</h3>
+          <p class="p-awards__body">千葉県No.1・全国No.1など、複数の保険会社から表彰を受けています。<br>数字で示せる実績があるからこそ、安心してお任せいただけます。</p>
+          <p class="p-awards__note">※各受賞は対象期間・対象部門における実績に基づきます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     07. CASE 1  ── 保障は下げずに、保険料を安くしたい
+     ============================================================ -->
+  <section class="p-case" id="ba">
+    <div class="l-container">
+      <div class="p-case__head fade-up">
+        <div class="case-chip">ケース①</div>
+        <h2 class="case-title">保障は下げずに、<br class="sp-only">保険料を安くしたい！</h2>
+      </div>
+
+      <div class="p-case__table fade-up d1">
+        <div class="case-tbl">
+          <div class="case-tbl__cond">32歳男性、死亡・医療・がん・三大疾病の保障の場合</div>
+
+          <div class="case-tbl__head">
+            <div class="case-tbl__col-label"></div>
+            <div class="case-tbl__col case-tbl__col--before">before</div>
+            <div class="case-tbl__col case-tbl__col--after">after</div>
+          </div>
+
+          <!-- Row: 死亡（定期） -->
+          <div class="case-tbl__row">
+            <div class="case-tbl__rowlabel">
+              <div class="case-tbl__rowicon case-tbl__rowicon--blue">
+                <svg viewBox="0 0 40 40" width="36" height="36">
+                  <ellipse cx="20" cy="4.2" rx="7.5" ry="2" fill="none" stroke="#2D9CDB" stroke-width="2" />
+                  <circle cx="20" cy="18" r="11" fill="#2D9CDB" />
+                  <circle cx="17" cy="17" r="1.6" fill="#fff" />
+                  <circle cx="23" cy="17" r="1.6" fill="#fff" />
+                  <path d="M16 21q4 3 8 0" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" />
+                </svg>
+              </div>
+              <span>死亡（定期）</span>
+            </div>
+            <div class="case-tbl__col case-tbl__col--before">
+              <span class="case-tbl__big case-tbl__big--blue">1600</span><span class="case-tbl__small">万円</span>
+              <div class="case-tbl__period">65歳まで</div>
+            </div>
+            <div class="case-tbl__col case-tbl__col--after">
+              <span class="case-tbl__big case-tbl__big--blue">1600</span><span class="case-tbl__small">万円</span>
+              <div class="case-tbl__period">55歳まで</div>
+            </div>
+            <div class="case-tbl__cb case-tbl__cb--1">お子様の<br>大学卒業<br>まででOK!</div>
+          </div>
+
+          <!-- Row: 死亡（終身） -->
+          <div class="case-tbl__row">
+            <div class="case-tbl__rowlabel">
+              <div class="case-tbl__rowicon case-tbl__rowicon--blue">
+                <svg viewBox="0 0 40 40" width="36" height="36">
+                  <rect x="18" y="8" width="4" height="24" fill="#2D9CDB" />
+                  <rect x="12" y="14" width="16" height="4" fill="#2D9CDB" />
+                </svg>
+              </div>
+              <span>死亡（終身）</span>
+            </div>
+            <div class="case-tbl__col case-tbl__col--before">
+              <span class="case-tbl__big case-tbl__big--blue">200</span><span class="case-tbl__small">万円</span>
+            </div>
+            <div class="case-tbl__col case-tbl__col--after">
+              <span class="case-tbl__big case-tbl__big--blue">200</span><span class="case-tbl__small">万円</span>
+            </div>
+          </div>
+
+          <!-- Row: 入院 -->
+          <div class="case-tbl__row">
+            <div class="case-tbl__rowlabel">
+              <div class="case-tbl__rowicon case-tbl__rowicon--green">
+                <svg viewBox="0 0 40 40" width="36" height="36">
+                  <rect x="8" y="18" width="24" height="12" rx="2" fill="#3DA858" />
+                  <rect x="8" y="14" width="6" height="6" fill="#3DA858" />
+                  <circle cx="11" cy="17" r="1" fill="#fff" />
+                </svg>
+              </div>
+              <span>入院</span>
+            </div>
+            <div class="case-tbl__col case-tbl__col--before">
+              <span class="case-tbl__big case-tbl__big--green">1</span><span class="case-tbl__small">万円</span>
+              <div class="case-tbl__period">1日あたり</div>
+            </div>
+            <div class="case-tbl__col case-tbl__col--after">
+              <span class="case-tbl__big case-tbl__big--green">1</span><span class="case-tbl__small">万円</span>
+              <div class="case-tbl__period">1日あたり</div>
+            </div>
+          </div>
+
+          <!-- Row: がん -->
+          <div class="case-tbl__row">
+            <div class="case-tbl__rowlabel">
+              <div class="case-tbl__rowicon case-tbl__rowicon--green">
+                <svg viewBox="0 0 40 40" width="36" height="36">
+                  <circle cx="20" cy="20" r="7" fill="#3DA858" />
+                  <path fill="#3DA858" d="M18.54,13.15 L20,7 L21.46,13.15 Z" />
+                  <path fill="#3DA858" d="M22.16,13.34 L26.5,8.74 L24.68,14.8 Z" />
+                  <path fill="#3DA858" d="M25.2,15.32 L31.26,13.5 L26.66,17.84 Z" />
+                  <path fill="#3DA858" d="M26.85,18.54 L33,20 L26.85,21.46 Z" />
+                  <path fill="#3DA858" d="M26.66,22.16 L31.26,26.5 L25.2,24.68 Z" />
+                  <path fill="#3DA858" d="M24.68,25.2 L26.5,31.26 L22.16,26.66 Z" />
+                  <path fill="#3DA858" d="M21.46,26.85 L20,33 L18.54,26.85 Z" />
+                  <path fill="#3DA858" d="M17.84,26.66 L13.5,31.26 L15.32,25.2 Z" />
+                  <path fill="#3DA858" d="M14.8,24.68 L8.74,26.5 L13.34,22.16 Z" />
+                  <path fill="#3DA858" d="M13.15,21.46 L7,20 L13.15,18.54 Z" />
+                  <path fill="#3DA858" d="M13.34,17.84 L8.74,13.5 L14.8,15.32 Z" />
+                  <path fill="#3DA858" d="M15.32,14.8 L13.5,8.74 L17.84,13.34 Z" />
+                </svg>
+              </div>
+              <span>がん</span>
+            </div>
+            <div class="case-tbl__col case-tbl__col--before">
+              <span class="case-tbl__big case-tbl__big--green">5</span><span class="case-tbl__small">千円</span>
+              <div class="case-tbl__period">1日あたり</div>
+            </div>
+            <div class="case-tbl__col case-tbl__col--after">
+              <span class="case-tbl__big case-tbl__big--green">5</span><span class="case-tbl__small">千円</span>
+              <div class="case-tbl__period">1日あたり</div>
+            </div>
+          </div>
+
+          <!-- Row: 3大疾病 -->
+          <div class="case-tbl__row">
+            <div class="case-tbl__rowlabel">
+              <div class="case-tbl__rowicon case-tbl__rowicon--green">
+                <svg viewBox="0 0 40 40" width="36" height="36">
+                  <circle cx="20" cy="13" r="9" fill="#3DA858" fill-opacity="0.35" stroke="#3DA858" stroke-width="2" />
+                  <circle cx="13" cy="26" r="9" fill="#3DA858" fill-opacity="0.35" stroke="#3DA858" stroke-width="2" />
+                  <circle cx="27" cy="26" r="9" fill="#3DA858" fill-opacity="0.35" stroke="#3DA858" stroke-width="2" />
+                </svg>
+              </div>
+              <span>3大疾病</span>
+            </div>
+            <div class="case-tbl__col case-tbl__col--before">
+              <span class="case-tbl__big case-tbl__big--green">1600</span><span class="case-tbl__small">万円</span>
+              <div class="case-tbl__period">65歳まで</div>
+            </div>
+            <div class="case-tbl__col case-tbl__col--after">
+              <span class="case-tbl__big case-tbl__big--green">1600</span><span class="case-tbl__small">万円</span>
+              <div class="case-tbl__period">終身</div>
+            </div>
+            <div class="case-tbl__cb case-tbl__cb--2">病気の<br>保障は<br>一生涯に</div>
+          </div>
+
+          <!-- Row: 保険料 (highlight) -->
+          <div class="case-tbl__row case-tbl__row--pay" id="case1-pay">
+            <div class="case-tbl__rowlabel">
+              <div class="case-tbl__rowicon case-tbl__rowicon--pink"><img src="./images/icon/bill-banded.png" alt=""
+                  class="row-money" />
+              </div>
+              <span>保険料</span>
+            </div>
+            <div class="case-tbl__col case-tbl__col--before">
+              <div class="case-tbl__pay case-tbl__pay--before">
+                <span class="case-tbl__pay-num">22,876</span><span class="case-tbl__pay-yen">円</span>
+              </div>
+            </div>
+            <div class="case-tbl__col case-tbl__col--after">
+              <div class="case-tbl__pay case-tbl__pay--after">
+                <span class="case-tbl__pay-num count-num" data-target="10394" data-format="comma"
+                  data-trigger="case1-pay">0</span><span class="case-tbl__pay-yen">円</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="case-tbl__notes">
+          ※表示は一例となります。詳しくはご来店時にご相談ください。<br>
+          ※年齢、性別、ご健康状態、喫煙の有無などにより、保険料は異なります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     07.5. INTERACTIVE SIMULATOR  ── あなたの場合は？
+     ============================================================ -->
+  <section class="p-sim" id="sim">
+    <div class="l-container">
+
+      <div class="p-sim__head fade-up">
+        <div class="p-voice__chip" style="margin-bottom:22px">
+          <span class="p-voice__chip-bar"></span>
+          SIMULATION
+        </div>
+        <h2 class="big-title">
+          <span class="big-title__line">あなたの保険料</span>
+          <span class="big-title__line big-title__line--accent">いくら下がる？</span>
+        </h2>
+        <p class="p-sim__lead">スライダーを動かして、ご自身のケースをシミュレーション。</p>
+      </div>
+
+      <div class="p-sim__card fade-up d1">
+
+        <div class="p-sim__inputs">
+          <!-- Age input -->
+          <div class="p-sim__field">
+            <div class="p-sim__field-head">
+              <label for="sim-age" class="p-sim__label">
+                <span class="p-sim__label-num">01</span>
+                年齢
+              </label>
+              <div class="p-sim__value">
+                <span id="sim-age-val">32</span><span class="p-sim__value-unit">歳</span>
+              </div>
+            </div>
+            <input id="sim-age" class="p-sim__slider" type="range" min="20" max="60" value="32" step="1">
+            <div class="p-sim__scale">
+              <span>20歳</span><span>40歳</span><span>60歳</span>
+            </div>
+          </div>
+
+          <!-- Premium input -->
+          <div class="p-sim__field">
+            <div class="p-sim__field-head">
+              <label for="sim-premium" class="p-sim__label">
+                <span class="p-sim__label-num">02</span>
+                いまの月額保険料
+              </label>
+              <div class="p-sim__value">
+                <span id="sim-premium-val">22,000</span><span class="p-sim__value-unit">円</span>
+              </div>
+            </div>
+            <input id="sim-premium" class="p-sim__slider" type="range" min="5000" max="50000" value="22000" step="500">
+            <div class="p-sim__scale">
+              <span>5,000円</span><span>25,000円</span><span>50,000円</span>
+            </div>
+          </div>
+
+          <!-- Family input -->
+          <div class="p-sim__field">
+            <div class="p-sim__field-head">
+              <label class="p-sim__label">
+                <span class="p-sim__label-num">03</span>
+                ご家族構成
+              </label>
+            </div>
+            <div class="p-sim__chips" role="radiogroup" aria-label="家族構成">
+              <button type="button" class="p-sim__chip is-active" data-family="single">独身</button>
+              <button type="button" class="p-sim__chip" data-family="couple">夫婦のみ</button>
+              <button type="button" class="p-sim__chip" data-family="kids">子どもあり</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-sim__divider" aria-hidden="true">
+          <span class="p-sim__divider-arrow">→</span>
+        </div>
+
+        <div class="p-sim__output">
+          <div class="p-sim__output-label">あなたの場合の見直し効果</div>
+
+          <div class="p-sim__bars">
+            <div class="p-sim__bar p-sim__bar--before">
+              <div class="p-sim__bar-label">
+                <span class="p-sim__bar-name">BEFORE</span>
+                <span class="p-sim__bar-amt"><span id="sim-before">22,000</span>円<span
+                    class="p-sim__bar-mini">/月</span></span>
+              </div>
+              <div class="p-sim__bar-track">
+                <div class="p-sim__bar-fill p-sim__bar-fill--before" id="sim-before-fill" style="width:100%"></div>
+              </div>
+            </div>
+            <div class="p-sim__bar p-sim__bar--after">
+              <div class="p-sim__bar-label">
+                <span class="p-sim__bar-name">AFTER</span>
+                <span class="p-sim__bar-amt"><span id="sim-after">10,560</span>円<span
+                    class="p-sim__bar-mini">/月</span></span>
+              </div>
+              <div class="p-sim__bar-track">
+                <div class="p-sim__bar-fill p-sim__bar-fill--after" id="sim-after-fill" style="width:48%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-sim__cards">
+            <div class="p-sim__metric">
+              <div class="p-sim__metric-label">月々の節約額</div>
+              <div class="p-sim__metric-val num"><span id="sim-monthly">11,440</span><span
+                  class="p-sim__metric-unit">円</span></div>
+            </div>
+            <div class="p-sim__metric p-sim__metric--accent">
+              <div class="p-sim__metric-label">1年で</div>
+              <div class="p-sim__metric-val num"><span id="sim-yearly">137,280</span><span
+                  class="p-sim__metric-unit">円</span></div>
+            </div>
+            <div class="p-sim__metric p-sim__metric--big">
+              <div class="p-sim__metric-label">60歳までで</div>
+              <div class="p-sim__metric-val num"><span id="sim-life">384</span><span
+                  class="p-sim__metric-unit">万円</span></div>
+              <div class="p-sim__metric-sub">の節約 ✨</div>
+            </div>
+          </div>
+
+          <a href="#line-cta" class="c-btn c-btn--pink c-btn--xl p-sim__cta">
+            <i class="fa-brands fa-line c-btn__line"></i>
+            <span class="c-btn__stack">
+              <span class="c-btn__top">本当に下がるか、プロに見てほしい！</span>
+              <span class="c-btn__main">LINEで無料3分チェック&nbsp;→</span>
+            </span>
+          </a>
+          <p class="p-sim__disclaimer">※シミュレーションは概算です。正確な金額は無料診断にてご確認ください。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     08. DIALOGUE  ── 会話で読む「どうして安くなる？」
+     ============================================================ -->
+  <section class="p-dialogue" id="dialogue">
+    <div class="l-container">
+
+      <div class="dialogue-row dialogue-row--left fade-up">
+        <div class="dialogue-row__avatar">
+          <img src="./images/character-woman-surprise.png" alt="お客様" loading="lazy">
+        </div>
+        <div class="speech speech--left">
+          <p>えー！信じられない！<br>どうしてこんなに安くなるんですか？</p>
+        </div>
+      </div>
+
+      <div class="dialogue-row dialogue-row--right fade-up d1">
+        <div class="speech speech--right">
+          <p>同じ保障でも、<strong>保険会社を変えるだけ</strong>で、保険料は全く変わります。<br>また、保障額だけでなく、<strong>保障の期間や、払込期間</strong>でも保険料は変わります。
+          </p>
+        </div>
+        <div class="dialogue-row__avatar">
+          <img src="./images/character-man-gesture.png" alt="ほけん家族 スタッフ" loading="lazy">
+        </div>
+      </div>
+
+      <div class="dialogue-row dialogue-row--left fade-up d2">
+        <div class="dialogue-row__avatar">
+          <img src="./images/character-woman-think.png" alt="お客様" loading="lazy">
+        </div>
+        <div class="speech speech--left">
+          <p>安すぎて逆に怪しいな・・・<br>詐欺とかじゃないですよね？</p>
+        </div>
+      </div>
+
+      <div class="dialogue-row dialogue-row--right fade-up d3">
+        <div class="speech speech--right">
+          <p><strong>実際の見積もりをお見せします。</strong><br>ご自身の目で確かめてください。</p>
+        </div>
+        <div class="dialogue-row__avatar">
+          <img src="./images/character-man-portrait.png" alt="ほけん家族 スタッフ" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     09. CASE 2  ── 保険料は変えずに、資産を増やしたい
+     ============================================================ -->
+  <section class="p-case">
+    <div class="l-container">
+      <div class="p-case__head fade-up">
+        <div class="case-chip">ケース②</div>
+        <h2 class="case-title">保険料は変えずに、<br class="sp-only">資産を増やしたい！</h2>
+      </div>
+
+      <div class="p-case__table fade-up d1">
+        <div class="case-tbl case-tbl--c2">
+          <div class="case-tbl__cond">32歳男性、死亡・医療・がん・三大疾病の保障の場合</div>
+
+          <div class="case-tbl__head">
+            <div class="case-tbl__col-label"></div>
+            <div class="case-tbl__col case-tbl__col--before">before</div>
+            <div class="case-tbl__col case-tbl__col--after case-tbl__col--after-strong">after</div>
+          </div>
+
+          <!-- Row: 保険料 -->
+          <div class="case-tbl__row case-tbl__row--c2" id="case2-pay">
+            <div class="case-tbl__rowlabel">
+              <div class="case-tbl__rowicon case-tbl__rowicon--mono"><img src="./images/icon/bill-banded.png" alt=""
+                  class="row-money" />
+              </div>
+              <span>保険料</span>
+            </div>
+            <div class="case-tbl__c2-values">
+              <div class="case-tbl__col case-tbl__col--before">
+                <div class="case-tbl__c2num"><span>22,876</span><span class="case-tbl__pay-yen">円</span></div>
+              </div>
+              <div class="case-tbl__col case-tbl__col--after case-tbl__col--after-strong">
+                <div class="case-tbl__c2num case-tbl__c2num--pink"><span class="count-num" data-target="22876"
+                    data-format="comma" data-trigger="case2-pay">0</span><span class="case-tbl__pay-yen">円</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-tbl__row case-tbl__row--c2 case-tbl__row--c2-top" id="case2-kake">
+              <div class="case-tbl__rowlabel">
+                <div class="case-tbl__rowicon case-tbl__rowicon--cyan"><img src="./images/icon/bill-wings.png" alt=""
+                    class="row-money" />
+                </div>
+                <span>かけ捨て</span>
+              </div>
+              <div class="case-tbl__c2-values">
+                <div class="case-tbl__col case-tbl__col--before">
+                  <div class="case-tbl__c2num"><span>18,802</span><span class="case-tbl__pay-yen">円</span></div>
+                </div>
+                <div class="case-tbl__col case-tbl__col--after case-tbl__col--after-strong">
+                  <div class="case-tbl__c2num case-tbl__c2num--pink"><span class="count-num" data-target="4145"
+                      data-format="comma" data-trigger="case2-kake">0</span><span class="case-tbl__pay-yen">円</span></div>
+                </div>
+              </div>
+            </div>
+
+          <div class="case-tbl__c2-swap-wrap" aria-hidden="true">
+            <div class="case-tbl__c2-swap">
+              <p class="case-tbl__cb case-tbl__cb--swap">かけ捨てと貯蓄の<br>比率を逆転</p>
+              <svg class="case-tbl__c2-cross-arrows" viewBox="0 0 240 140" width="240" height="140">
+                <defs>
+                  <marker id="c2-arrowhead" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+                    <path d="M0,0 L5,2.5 L0,5 Z" fill="#C8C4BC" />
+                  </marker>
+                </defs>
+                <path d="M36 18 L204 122" fill="none" stroke="#C8C4BC" stroke-width="8" stroke-linecap="round"
+                  marker-end="url(#c2-arrowhead)" />
+                <path d="M36 122 L204 18" fill="none" stroke="#C8C4BC" stroke-width="8" stroke-linecap="round"
+                  marker-end="url(#c2-arrowhead)" />
+              </svg>
+            </div>
+          </div>
+
+            <!-- Row: 貯蓄 -->
+            <div class="case-tbl__row case-tbl__row--c2 case-tbl__row--c2-bottom" id="case2-saving">
+              <div class="case-tbl__rowlabel">
+                <div class="case-tbl__rowicon case-tbl__rowicon--pink-soft"><img src="./images/icon/bag-small.png" alt=""
+                    class="row-money" />
+                </div>
+                <span>貯蓄</span>
+              </div>
+              <div class="case-tbl__c2-values">
+                <div class="case-tbl__col case-tbl__col--before">
+                  <div class="case-tbl__c2num"><span>4,074</span><span class="case-tbl__pay-yen">円</span></div>
+                </div>
+                <div class="case-tbl__col case-tbl__col--after case-tbl__col--after-strong">
+                  <div class="case-tbl__c2num case-tbl__c2num--pink"><span class="count-num" data-target="18731"
+                      data-format="comma" data-trigger="case2-saving">0</span><span class="case-tbl__pay-yen">円</span></div>
+                </div>
+              </div>
+            </div>
+
+          <!-- Row: 65歳時の積み立て -->
+          <div class="case-tbl__row case-tbl__row--c2 case-tbl__row--final" id="case2-final">
+            <div class="case-tbl__rowlabel">
+              <div class="case-tbl__rowicon case-tbl__rowicon--gold"><img src="./images/icon/coin-tall.png" alt=""
+                  class="row-money" />
+              </div>
+              <span>65歳時の<br>積み立て</span>
+            </div>
+            <div class="case-tbl__c2-values">
+              <div class="case-tbl__col case-tbl__col--before">
+                <div class="case-tbl__c2num case-tbl__c2num--lg"><span>160</span><span class="case-tbl__pay-yen">万円</span>
+                </div>
+              </div>
+              <div class="case-tbl__col case-tbl__col--after case-tbl__col--after-strong">
+                <div class="case-tbl__c2num case-tbl__c2num--pink case-tbl__c2num--lg"><span class="count-num"
+                    data-target="2200" data-format="comma" data-trigger="case2-final">0</span><span
+                    class="case-tbl__pay-yen">万円</span></div>
+                <p class="case-tbl__c2-note">※年6%で運用の場合</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="case-tbl__notes">
+          ※表示は一例となります。詳しくはご来店時にご相談ください。<br>
+          ※利率変動型の保険で試算しており、確定した金額ではありません。<br>
+          国内外の株式・債券等で運用しており、運用実績が積立金額の増減につながるため、株価や債券価格の下落、為替の変動により、積立金額、解約返戻金額は既払込保険料を下回ることがあり、損失が生ずる可能性があります。
+        </p>
+      </div>
+
+      <!-- Inline CTA after case 2 -->
+      <div class="p-case__cta fade-up">
+        <a href="#line-cta" class="c-btn c-btn--pink c-btn--xl">
+          <i class="fa-brands fa-line c-btn__line"></i>
+          <span class="c-btn__stack">
+            <span class="c-btn__top">うちの保険、いくら安くなる？貯まる？</span>
+            <span class="c-btn__main">LINEで無料3分チェック&nbsp;→</span>
+          </span>
+        </a>
+        <a href="#access" class="c-btn c-btn--outline-pink c-btn--xl">
+          <i class="fa-brands fa-line c-btn__line"></i>
+          <span class="c-btn__stack">
+            <span class="c-btn__top">お店に行って相談したい！</span>
+            <span class="c-btn__main">来店予約はこちら&nbsp;→</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     10. VOICES  ── お客様の声
+     ============================================================ -->
+  <section class="p-voice" id="voice">
+    <div class="l-container">
+      <div class="p-voice__head fade-up">
+        <div class="p-voice__chip">
+          <span class="p-voice__chip-bar"></span>
+          お客様の声
+        </div>
+      </div>
+
+      <div class="p-voice__slider fade-up" id="voice-slider">
+        <div class="p-voice__slider-viewport">
+        <div class="p-voice__slider-track" id="voice-slider-track">
+          <div class="p-voice__slide">
+            <div class="voice-card">
+              <div class="voice-card__top">
+                <div class="voice-card__avatar voice-card__avatar--ny">
+                  <img src="./images/icon/icon_voice.svg" alt="" width="96" height="96" aria-hidden="true" />
+                </div>
+                <div class="voice-card__heading">
+                  <div class="voice-card__name">N・Y 様</div>
+                  <h3 class="voice-card__title">あの日お会いできたことが、<br>私の人生の幸運でした。</h3>
+                </div>
+              </div>
+              <div class="voice-card__letter voice-card__letter--img">
+                <img src="./images/letter-ny.png" alt="N・Y様 より頂いたお手紙" class="letter-img" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="p-voice__slide">
+            <div class="voice-card voice-card--compact">
+              <div class="voice-card__top">
+                <div class="voice-card__avatar voice-card__avatar--wm">
+                  <img src="./images/icon/icon_voice2.svg" alt="" width="96" height="96" aria-hidden="true" />
+                </div>
+                <div class="voice-card__heading">
+                  <div class="voice-card__name">W・M 様</div>
+                  <h3 class="voice-card__title voice-card__title--sm">保険はもとより、さまざまな人生相談もしたりして、<br>いつも頼りにしています。</h3>
+                </div>
+              </div>
+              <div class="voice-card__letter voice-card__letter--hand voice-card__letter--img">
+                <img src="./images/letter-wm.png" alt="W・M様 より頂いたお手紙" class="letter-img" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="p-voice__slide">
+            <div class="voice-card voice-card--compact">
+              <div class="voice-card__top">
+                <div class="voice-card__avatar voice-card__avatar--ke">
+                  <img src="./images/icon/icon_voice3.svg" alt="" width="96" height="96" aria-hidden="true" />
+                </div>
+                <div class="voice-card__heading">
+                  <div class="voice-card__name">K・E 様</div>
+                  <h3 class="voice-card__title voice-card__title--sm">
+                    私どものことを第一に考えた提案をしてくださいます。<br>資産運用の仕方もわかりやすく、将来に安心感を得られました。</h3>
+                </div>
+              </div>
+              <div class="voice-card__letter voice-card__letter--hand voice-card__letter--img">
+                <img src="./images/letter-ke.png" alt="K・E様 より頂いたお手紙" class="letter-img" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+          <button class="p-voice__slider-btn p-voice__slider-btn--prev" id="voice-slider-prev"
+            aria-label="前のお客様の声">&#8249;</button>
+          <button class="p-voice__slider-btn p-voice__slider-btn--next" id="voice-slider-next"
+            aria-label="次のお客様の声">&#8250;</button>
+        </div>
+        <div class="p-voice__slider-dots" id="voice-slider-dots">
+          <button class="p-voice__slider-dot active" data-index="0" aria-label="1件目"></button>
+          <button class="p-voice__slider-dot" data-index="1" aria-label="2件目"></button>
+          <button class="p-voice__slider-dot" data-index="2" aria-label="3件目"></button>
+        </div>
+      </div>
+
+      <p class="p-voice__note">※個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     11. TARGET USERS  ── 特に、こんな方のお役に立てます
+     ============================================================ -->
+  <section class="p-target" id="target">
+    <div class="l-container">
+      <div class="p-target__inner">
+
+        <div class="p-target__visual fade-up">
+          <div class="p-target__art">
+            <img src="./images/target-store.jpg" alt="ほけん家族 店舗外観" width="1328" height="996" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="p-target__content">
+          <div class="fade-up">
+            <div class="p-voice__chip" style="margin-bottom:22px">
+              <span class="p-voice__chip-bar"></span>
+              特徴
+            </div>
+            <h2 class="big-title big-title--md">
+              <span class="big-title__line">特に、こんな方の</span>
+              <span class="big-title__line">お役に立てます</span>
+            </h2>
+          </div>
+
+          <ul class="p-target__list">
+            <li class="p-target__item fade-up d1">
+              <span class="p-target__check"><svg viewBox="0 0 14 14" width="14" height="14">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></span>
+              <span class="p-target__text"><strong class="p-target__em">漢字の名前</strong>の保険会社に加入している</span>
+            </li>
+            <li class="p-target__item fade-up d2">
+              <span class="p-target__check"><svg viewBox="0 0 14 14" width="14" height="14">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></span>
+              <span class="p-target__text"><strong class="p-target__em">更新型</strong>の保険に加入している</span>
+            </li>
+            <li class="p-target__item fade-up d3">
+              <span class="p-target__check"><svg viewBox="0 0 14 14" width="14" height="14">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></span>
+              <span class="p-target__text"><strong class="p-target__em">友人・知人や職場に勧誘に来る保険屋さん</strong>で加入している</span>
+            </li>
+            <li class="p-target__item fade-up d4">
+              <span class="p-target__check"><svg viewBox="0 0 14 14" width="14" height="14">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></span>
+              <span class="p-target__text">月2万円以上の保険料を払っている</span>
+            </li>
+            <li class="p-target__item fade-up d5">
+              <span class="p-target__check"><svg viewBox="0 0 14 14" width="14" height="14">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></span>
+              <span class="p-target__text"><strong class="p-target__em">無駄な掛け捨てを減らして、なるべく貯蓄したい</strong></span>
+            </li>
+            <li class="p-target__item fade-up" style="transition-delay:.54s">
+              <span class="p-target__check"><svg viewBox="0 0 14 14" width="14" height="14">
+                  <path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></span>
+              <span class="p-target__text">保険はよくわからないから、<strong class="p-target__em">信頼できる担当者</strong>に任せたい</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     12. FLOW  ── 無料で始められます LINEで所要時間は約3分
+     ============================================================ -->
+  <section class="p-flow" id="flow">
+    <div class="l-container">
+      <div class="p-flow__head fade-up">
+        <div class="p-voice__chip" style="justify-content:center; margin-bottom:22px;">
+          <span class="p-voice__chip-bar"></span>
+          ご相談の流れ
+        </div>
+        <h2 class="big-title">
+          <span class="big-title__line">無料で始められます</span>
+          <span class="big-title__line big-title__line--accent">LINEで所要時間は約3分</span>
+        </h2>
+      </div>
+
+      <div class="p-flow__steps" id="flow-steps">
+        <div class="p-flow__step">
+          <div class="p-flow__step-num p-flow__step-num--current">01</div>
+          <div class="p-flow__step-title">LINEで<br>友だち追加</div>
+          <div class="p-flow__step-note">まずはLINEで<br>無料登録</div>
+        </div>
+        <div class="p-flow__step">
+          <div class="p-flow__step-num">02</div>
+          <div class="p-flow__step-title">3分<br>セルフチェック</div>
+          <div class="p-flow__step-note">ご自身でできる<br>簡易診断</div>
+        </div>
+        <div class="p-flow__step">
+          <div class="p-flow__step-num">03</div>
+          <div class="p-flow__step-title">結果確認後<br>電話予約（任意）</div>
+          <div class="p-flow__step-note">より詳しく<br>知りたい方のみ</div>
+        </div>
+        <div class="p-flow__step">
+          <div class="p-flow__step-num">04</div>
+          <div class="p-flow__step-title">保険証券を持って<br>来店</div>
+          <div class="p-flow__step-note">診断に約1週間<br>お時間をいただきます</div>
+        </div>
+        <div class="p-flow__step">
+          <div class="p-flow__step-num">05</div>
+          <div class="p-flow__step-title">診断結果を<br>お聞きする</div>
+          <div class="p-flow__step-note">ここまで<br>すべて無料です</div>
+        </div>
+      </div>
+
+      <div class="p-flow__cta fade-up">
+        <a href="#line-cta" class="c-btn c-btn--pink c-btn--xl">
+          <i class="fa-brands fa-line c-btn__line"></i>
+          <span class="c-btn__stack">
+            <span class="c-btn__top">うちの保険、いくら安くなる？貯まる？</span>
+            <span class="c-btn__main">LINEで無料3分チェック&nbsp;→</span>
+          </span>
+        </a>
+        <p class="p-flow__cta-note">セルフチェックだけでもOKです。来店を強制することはありません。</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     13. ACCESS
+     ============================================================ -->
+  <section class="p-access" id="access">
+    <div class="l-container">
+      <div class="p-access__head fade-up">
+        <div class="p-voice__chip">
+          <span class="p-voice__chip-bar"></span>
+          アクセス
+        </div>
+        <h2 class="big-title big-title--md">茂原市・北塚の<br>来店型保険相談窓口です。</h2>
+      </div>
+
+      <div class="p-access__inner">
+        <div class="p-access__info fade-up">
+          <h3 class="p-access__name">ほけん家族</h3>
+          <div class="p-access__corp">株式会社アクトワン</div>
+
+          <div class="p-access__table">
+            <div class="p-access__row"><span class="p-access__row-label">住所</span><span
+                class="p-access__row-value">〒297-0009<br>千葉県茂原市北塚947-1<br><small>ベイシア・カインズと同じ通り沿い</small></span></div>
+            <div class="p-access__row"><span class="p-access__row-label">営業時間</span><span
+                class="p-access__row-value">9:00〜17:00<br><small>定休日：火曜日</small></span></div>
+            <div class="p-access__row"><span class="p-access__row-label">駐車場</span><span
+                class="p-access__row-value">5台完備（無料）</span></div>
+            <div class="p-access__row"><span class="p-access__row-label">電話</span><span class="p-access__row-value">
+                <div class="p-access__phone">0120-037-042</div><small>通話料無料・受付時間 9:00〜17:00</small>
+              </span></div>
+          </div>
+        </div>
+
+        <div class="fade-up d1">
+          <div class="p-access__slider" id="access-slider">
+            <div class="p-access__slider-track" id="slider-track">
+              <div class="p-access__slide"><img src="./images/exterior-1.jpg" alt="ほけん家族 店舗外観" loading="lazy"></div>
+              <div class="p-access__slide"><img src="./images/interior-bright.jpg" alt="店内の様子" loading="lazy"></div>
+              <div class="p-access__slide"><img src="./images/interior-sofa.jpg" alt="ゆったりとした相談スペース" loading="lazy">
+              </div>
+              <div class="p-access__slide"><img src="./images/kids-corner.jpg" alt="キッズコーナー完備" loading="lazy"></div>
+            </div>
+            <button class="p-access__slider-btn p-access__slider-btn--prev" id="slider-prev"
+              aria-label="前の画像">&#8249;</button>
+            <button class="p-access__slider-btn p-access__slider-btn--next" id="slider-next"
+              aria-label="次の画像">&#8250;</button>
+            <div class="p-access__slider-dots" id="slider-dots">
+              <button class="p-access__slider-dot active" data-index="0"></button>
+              <button class="p-access__slider-dot" data-index="1"></button>
+              <button class="p-access__slider-dot" data-index="2"></button>
+              <button class="p-access__slider-dot" data-index="3"></button>
+            </div>
+          </div>
+          <div class="p-access__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.65085180825!2d140.2981066771266!3d35.46343734190517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b9042bd3df03%3A0x9860a8892f74e5e7!2z44G744GR44KT5a625peP!5e0!3m2!1sja!2sjp!4v1777433446226!5m2!1sja!2sjp"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ほけん家族 地図"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     12. FINAL CTA
+     ============================================================ -->
+  <section class="p-finalcta" id="line-cta">
+    <div class="l-container">
+      <div class="p-finalcta__inner fade-up">
+        <h2 class="big-title big-title--white">
+          <span class="big-title__line">保険料、下げられる</span>
+          <span class="big-title__line big-title__line--accent">かもしれません。</span>
+        </h2>
+        <p class="p-finalcta__sub">
+          LINEで3分、まずは気軽にチェックしてみませんか？<br>
+          売り込みなし。結果を見てから、決めてください。
+        </p>
+        <div class="p-finalcta__btns">
+          <a href="#" class="c-btn c-btn--pink c-btn--xl">
+            <i class="fa-brands fa-line c-btn__line"></i>
+            <span class="c-btn__stack">
+              <span class="c-btn__top">うちの保険、いくら安くなる？貯まる？</span>
+              <span class="c-btn__main">LINEで無料3分チェック&nbsp;→</span>
+            </span>
+          </a>
+          <a href="tel:0120037042" class="c-btn c-btn--outline-white c-btn--xl">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.95-1.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="c-btn__stack">
+              <span class="c-btn__top">電話で相談</span>
+              <span class="c-btn__main">0120-037-042</span>
+            </span>
+          </a>
+        </div>
+        <p class="p-finalcta__disclaimer">
+          ※保険料・資産額の変化は、お客様個人の保険内容・年齢・健康状態・目的等によって異なります。<br>
+          ※「No.1」「販売件数」などの実績は、特定の保険会社・対象期間・対象部門における結果です。
+        </p>
+      </div>
+      <div class="p-finalcta__foot">
+        <div>
+          <div class="p-finalcta__brand">ほけん家族（株式会社アクトワン）</div>
+          <div>〒297-0009 千葉県茂原市北塚947-1　TEL: 0120-037-042</div>
+        </div>
+        <div>&copy; 2026 Hoken Kazoku / Act One Co., Ltd. All rights reserved.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="letter-lightbox" class="letter-lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="letter-lightbox-title">
+    <div class="letter-lightbox__backdrop" data-close></div>
+    <div class="letter-lightbox__panel">
+      <p id="letter-lightbox-title" class="letter-lightbox__title">お手紙</p>
+      <button type="button" class="letter-lightbox__close" aria-label="閉じる" data-close>&times;</button>
+      <div class="letter-lightbox__scroll">
+        <img class="letter-lightbox__img" src="" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
