@@ -96,11 +96,12 @@
 /* ── Reveal-target observer (icon-in + count-up sequence) ── */
 function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 
-function countUp(el, target, duration, format) {
+function countUp(el, target, duration, format, start) {
+  const from = (start !== undefined) ? start : 0;
   const t0 = performance.now();
   function tick(now) {
     const p = Math.min((now - t0) / duration, 1);
-    const val = Math.round(easeOutCubic(p) * target);
+    const val = Math.round(from + easeOutCubic(p) * (target - from));
     el.textContent = format === 'comma' ? val.toLocaleString('ja-JP') : String(val);
     if (p < 1) requestAnimationFrame(tick);
     else if (!el.closest('.p-hero__ba-card')) {
@@ -150,8 +151,10 @@ function countUp(el, target, duration, format) {
         firedCounters.add(c);
         const target = parseInt(c.dataset.target || '0', 10);
         const format = c.dataset.format;
+        const duration = parseInt(c.dataset.duration || '5500', 10);
+        const start = c.dataset.start !== undefined ? parseInt(c.dataset.start, 10) : undefined;
         const delay  = 700 + items.length * 120 + i * 80;
-        setTimeout(() => countUp(c, target, 1900, format), delay);
+        setTimeout(() => countUp(c, target, duration, format, start), delay);
       });
 
       obs.unobserve(e.target);
