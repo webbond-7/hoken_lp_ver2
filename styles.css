@@ -2376,8 +2376,10 @@ img { max-width: 100%; display: block; }
   color: var(--pink);
   letter-spacing: -0.01em;
   line-height: 1;
-  display: inline-flex; align-items: baseline; gap: 3px;
+  display: inline-flex; align-items: baseline; justify-content: flex-end; gap: 3px;
   white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 90px;
 }
 .p-sim__value-unit { font-family: var(--font-jp); font-size: 14px; color: var(--text-body); font-weight: 800; }
 
