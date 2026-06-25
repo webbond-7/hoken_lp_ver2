@@ -208,23 +208,19 @@ function countUp(el, target, duration, format, start) {
 
 /* ── Interactive Simulator ── */
 (function(){
-  const ageEl = document.getElementById('sim-age');
-  if (!ageEl) return;
-  const premiumEl = document.getElementById('sim-premium');
-  const ageVal = document.getElementById('sim-age-val');
-  const premiumValEl = document.getElementById('sim-premium-val');
-  const beforeEl = document.getElementById('sim-before');
-  const afterEl = document.getElementById('sim-after');
-  const monthlyEl = document.getElementById('sim-monthly');
-  const yearlyEl = document.getElementById('sim-yearly');
-  const lifeEl = document.getElementById('sim-life');
-  const beforeFill = document.getElementById('sim-before-fill');
-  const afterFill = document.getElementById('sim-after-fill');
+  const yearsEl = document.getElementById('sim-years');
+  if (!yearsEl) return;
+  const initialEl = document.getElementById('sim-initial');
+  const monthlyInvestEl = document.getElementById('sim-monthly-invest');
+  const yearsValEl = document.getElementById('sim-years-val');
+  const initialValEl = document.getElementById('sim-initial-val');
+  const monthlyInvestValEl = document.getElementById('sim-monthly-invest-val');
+  const yearsResultEl = document.getElementById('sim-years-result');
+  const totalEl = document.getElementById('sim-total');
   const chips = document.querySelectorAll('.p-sim__chip');
 
-  let family = 'single';
+  let rate = 0.003; // default 0.3%
 
-  // Smoothly tween a number element's display value
   const fmt = (n) => Math.round(n).toLocaleString('ja-JP');
   const tweenMap = new WeakMap();
   function tween(el, to) {
@@ -243,7 +239,6 @@ function countUp(el, target, duration, format, start) {
         const parent = el.closest('.p-sim__metric-val');
         if (parent) {
           parent.classList.remove('is-bump');
-          // restart animation
           void parent.offsetWidth;
           parent.classList.add('is-bump');
         }
@@ -259,57 +254,56 @@ function countUp(el, target, duration, format, start) {
   }
 
   function calc() {
-    const age = +ageEl.value;
-    const premium = +premiumEl.value;
+    const N = +yearsEl.value;
+    const P = +initialEl.value * 10000; // 万円 → 円
+    const M = +monthlyInvestEl.value;   // 円/月
+    const r = rate;
 
-    // Discount factor model:
-    //   base 50% off, less for older, less for kids (need more coverage)
-    let discount = 0.52;
-    discount -= Math.max(0, (age - 30) * 0.005);  // -0.5% per year over 30
-    if (family === 'couple') discount -= 0.03;
-    if (family === 'kids')   discount -= 0.07;
-    discount = Math.max(0.30, Math.min(0.62, discount));
+    // 初期投資の将来価値（年複利）: P × (1 + r)^N
+    const fvInitial = P * Math.pow(1 + r, N);
 
-    const after = Math.round(premium * (1 - discount) / 100) * 100;
-    const monthly = premium - after;
-    const yearly = monthly * 12;
-    const years = Math.max(0, 60 - age);
-    const lifeYen = monthly * 12 * years;  // 円
-    const lifeMan = Math.round(lifeYen / 10000); // 万円
+    // 毎月積立の将来価値（年複利ベースの実効月利）
+    // rm = (1+r)^(1/12) - 1、FV = PMT × (1+rm) × ((1+r)^N - 1) / rm
+    let fvMonthly;
+    if (r === 0) {
+      fvMonthly = M * N * 12;
+    } else {
+      const rm = Math.pow(1 + r, 1 / 12) - 1;
+      fvMonthly = M * (1 + rm) * (Math.pow(1 + r, N) - 1) / rm;
+    }
 
-    tween(beforeEl, premium);
-    tween(afterEl,  after);
-    tween(monthlyEl, monthly);
-    tween(yearlyEl, yearly);
-    tween(lifeEl,   lifeMan);
+    const total = fvInitial + fvMonthly;
+    const totalMan = Math.round(total / 10000);
 
-    // Bars: full track is max premium
-    const maxP = +premiumEl.max;
-    beforeFill.style.width = ((premium / maxP) * 100).toFixed(1) + '%';
-    afterFill.style.width  = ((after   / maxP) * 100).toFixed(1) + '%';
+    // Update display values
+    yearsValEl.textContent = N;
+    if (yearsResultEl) yearsResultEl.textContent = N;
+    initialValEl.textContent = initialEl.value;
+    const mv = +monthlyInvestEl.value / 10000;
+    monthlyInvestValEl.textContent = mv % 1 === 0 ? mv.toFixed(0) : mv.toFixed(1);
 
-    // Header values
-    ageVal.textContent = age;
-    premiumValEl.textContent = premium.toLocaleString('ja-JP');
+    tween(totalEl, totalMan);
 
-    updateSliderFill(ageEl);
-    updateSliderFill(premiumEl);
+    updateSliderFill(yearsEl);
+    updateSliderFill(initialEl);
+    updateSliderFill(monthlyInvestEl);
   }
 
-  ageEl.addEventListener('input', calc);
-  premiumEl.addEventListener('input', calc);
+  yearsEl.addEventListener('input', calc);
+  initialEl.addEventListener('input', calc);
+  monthlyInvestEl.addEventListener('input', calc);
   chips.forEach(c => {
     c.addEventListener('click', () => {
       chips.forEach(x => x.classList.remove('is-active'));
       c.classList.add('is-active');
-      family = c.dataset.family;
+      rate = parseFloat(c.dataset.rate);
       calc();
     });
   });
 
-  // Initial paint
-  updateSliderFill(ageEl);
-  updateSliderFill(premiumEl);
+  updateSliderFill(yearsEl);
+  updateSliderFill(initialEl);
+  updateSliderFill(monthlyInvestEl);
   calc();
 })();
 
