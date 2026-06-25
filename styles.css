@@ -2377,6 +2377,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.01em;
   line-height: 1;
   display: inline-flex; align-items: baseline; gap: 3px;
+  white-space: nowrap;
 }
 .p-sim__value-unit { font-family: var(--font-jp); font-size: 14px; color: var(--text-body); font-weight: 800; }
 
@@ -2525,6 +2526,7 @@ img { max-width: 100%; display: block; }
   color: var(--black);
   line-height: 1; letter-spacing: -0.01em;
   display: inline-flex; align-items: baseline; justify-content: center; gap: 2px;
+  white-space: nowrap;
   transition: transform 0.18s ease;
 }
 .p-sim__metric-val.is-bump { animation: numBump 0.32s ease-out; }
