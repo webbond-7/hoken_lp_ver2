@@ -350,60 +350,89 @@ function countUp(el, target, duration, format, start) {
   startAuto();
 })();
 
-/* ── Voice slider ── */
+/* ── Voice slider: continuous marquee loop, draggable, click-to-enlarge ── */
 (function(){
-  const track   = document.getElementById('voice-slider-track');
-  if (!track) return;
-  const dots    = document.querySelectorAll('.p-voice__slider-dot');
-  const btnPrev = document.getElementById('voice-slider-prev');
-  const btnNext = document.getElementById('voice-slider-next');
-  const total   = track.children.length;
-  let current   = 0;
-  let autoTimer;
-  let dragX = 0, dragging = false;
-
-  function goTo(idx) {
-    current = (idx + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === current));
-  }
-  function startAuto() {
-    clearInterval(autoTimer);
-    autoTimer = setInterval(() => goTo(current + 1), 6000);
-  }
-
-  btnPrev && btnPrev.addEventListener('click', () => { goTo(current - 1); startAuto(); });
-  btnNext && btnNext.addEventListener('click', () => { goTo(current + 1); startAuto(); });
-  dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); startAuto(); }));
-
   const slider = document.getElementById('voice-slider');
-  function start(x) { dragX = x; dragging = true; }
-  function end(x) {
-    if (!dragging) return;
-    dragging = false;
-    const diff = dragX - x;
-    if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); startAuto(); }
-  }
-  slider.addEventListener('mousedown',  e => start(e.clientX));
-  slider.addEventListener('mouseup',    e => end(e.clientX));
-  slider.addEventListener('mouseleave', e => { if (dragging) end(e.clientX); });
-  slider.addEventListener('touchstart', e => start(e.touches[0].clientX), { passive: true });
-  slider.addEventListener('touchend',   e => end(e.changedTouches[0].clientX), { passive: true });
+  const track  = document.getElementById('voice-slider-track');
+  if (!slider || !track) return;
 
-  startAuto();
+  const SPEED = 46; // px per second
+  let setWidth = 0;
+  let posX = 0;
+  let dragging = false;
+  let hovering = false;
+  let lightboxOpen = false;
+  let startX = 0, startPos = 0, dragDistance = 0;
+  let lastTime = null;
+
+  function measure() { setWidth = track.scrollWidth / 2; }
+  measure();
+  window.addEventListener('resize', measure);
+
+  function normalize() {
+    if (setWidth <= 0) return;
+    while (posX <= -setWidth) posX += setWidth;
+    while (posX > 0) posX -= setWidth;
+  }
+
+  function apply() { track.style.transform = `translateX(${posX}px)`; }
+
+  function tick(time) {
+    if (lastTime === null) lastTime = time;
+    const dt = (time - lastTime) / 1000;
+    lastTime = time;
+    if (!dragging && !hovering && !lightboxOpen && setWidth > 0) {
+      posX -= SPEED * dt;
+      normalize();
+    }
+    apply();
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  function pointerDown(x) {
+    dragging = true;
+    dragDistance = 0;
+    startX = x;
+    startPos = posX;
+    slider.classList.add('is-dragging');
+  }
+  function pointerMove(x) {
+    if (!dragging) return;
+    const dx = x - startX;
+    dragDistance = Math.max(dragDistance, Math.abs(dx));
+    posX = startPos + dx;
+    normalize();
+  }
+  function pointerUp() {
+    dragging = false;
+    slider.classList.remove('is-dragging');
+  }
+
+  slider.addEventListener('mousedown', (e) => pointerDown(e.clientX));
+  window.addEventListener('mousemove', (e) => { if (dragging) pointerMove(e.clientX); });
+  window.addEventListener('mouseup', pointerUp);
+  slider.addEventListener('touchstart', (e) => pointerDown(e.touches[0].clientX), { passive: true });
+  slider.addEventListener('touchmove', (e) => pointerMove(e.touches[0].clientX), { passive: true });
+  slider.addEventListener('touchend', pointerUp);
+  slider.addEventListener('mouseenter', () => { hovering = true; });
+  slider.addEventListener('mouseleave', () => { hovering = false; });
+
+  slider.__voiceSlider = {
+    isRealDrag: () => dragDistance > 6,
+    setLightboxOpen: (open) => { lightboxOpen = open; },
+  };
 })();
 
-/* ── Letter image lightbox (SP) ── */
+/* ── Letter image lightbox (click/tap to enlarge, all devices) ── */
 (function(){
-  const mq = window.matchMedia('(max-width: 768px)');
+  const slider = document.getElementById('voice-slider');
   const lightbox = document.getElementById('letter-lightbox');
   const lbImg = lightbox && lightbox.querySelector('.letter-lightbox__img');
   const lbTitle = document.getElementById('letter-lightbox-title');
   if (!lightbox || !lbImg) return;
 
-  const imgs = Array.from(document.querySelectorAll('.letter-img'));
   let lastFocus = null;
-  let bound = false;
 
   function open(src, alt) {
     lastFocus = document.activeElement;
@@ -414,6 +443,7 @@ function countUp(el, target, duration, format, start) {
     lightbox.setAttribute('aria-hidden', 'false');
     lightbox.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+    if (slider && slider.__voiceSlider) slider.__voiceSlider.setLightboxOpen(true);
     lightbox.querySelector('.letter-lightbox__close').focus();
   }
 
@@ -423,47 +453,15 @@ function countUp(el, target, duration, format, start) {
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     lbImg.removeAttribute('src');
+    if (slider && slider.__voiceSlider) slider.__voiceSlider.setLightboxOpen(false);
     if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
     lastFocus = null;
   }
 
-  function onImgClick(e) {
+  function onImgClick(e, img) {
     e.preventDefault();
     e.stopPropagation();
-    open(e.currentTarget.src, e.currentTarget.alt);
-  }
-
-  function stopSliderDrag(e) {
-    e.stopPropagation();
-  }
-
-  function bind() {
-    if (bound) return;
-    bound = true;
-    imgs.forEach((img) => {
-      img.addEventListener('click', onImgClick);
-      img.addEventListener('mousedown', stopSliderDrag);
-      img.addEventListener('touchstart', stopSliderDrag, { passive: true });
-    });
-    lightbox.querySelectorAll('[data-close]').forEach((el) => {
-      el.addEventListener('click', close);
-    });
-    document.addEventListener('keydown', onKeydown);
-  }
-
-  function unbind() {
-    if (!bound) return;
-    bound = false;
-    imgs.forEach((img) => {
-      img.removeEventListener('click', onImgClick);
-      img.removeEventListener('mousedown', stopSliderDrag);
-      img.removeEventListener('touchstart', stopSliderDrag);
-    });
-    lightbox.querySelectorAll('[data-close]').forEach((el) => {
-      el.removeEventListener('click', close);
-    });
-    document.removeEventListener('keydown', onKeydown);
-    close();
+    open(img.src, img.alt);
   }
 
   function onKeydown(e) {
@@ -471,11 +469,15 @@ function countUp(el, target, duration, format, start) {
     if (e.key === 'Escape') close();
   }
 
-  function sync() {
-    if (mq.matches) bind();
-    else unbind();
-  }
-
-  mq.addEventListener('change', sync);
-  sync();
+  // Delegate so it keeps working for slides duplicated for the marquee loop.
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest('.letter-img');
+    if (!img) return;
+    if (slider && slider.__voiceSlider && slider.__voiceSlider.isRealDrag()) return;
+    onImgClick(e, img);
+  });
+  lightbox.querySelectorAll('[data-close]').forEach((el) => {
+    el.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', onKeydown);
 })();
